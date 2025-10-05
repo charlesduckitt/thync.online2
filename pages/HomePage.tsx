@@ -3,28 +3,38 @@ import { Link } from "react-router-dom";
 import AnimatedSpheres from "../components/AnimatedSpheres";
 // 1. Import your hero image
 import homeHeroImage from "../assets/home-hero1.png"; // <-- Make sure this path is correct
+import featureImage1 from "../assets/home1.png"; // Make sure this filename is correct
+import featureImage2 from "../assets/home2.png"; // Make sure this filename is correct
+import featureImage3 from "../assets/home3.png"; // Make sure this filename is correct
+import featureImage4 from "../assets/home4.png"; // Make sure this filename is correct
 
 const HomePage: React.FC = () => {
   const features = [
     {
       name: "Bespoke Digital Ecosystems",
       description: "Custom ERPs to intelligent workflow automations.",
+      image: featureImage1, // <-- Add this line
     },
     {
       name: "Web & App Platforms",
       description:
         "Secure, high-performance applications for impeccable usability.",
+      image: featureImage2, // <-- Add this line
     },
     {
       name: "Performance & Infrastructure",
       description: "Speed, security, and SEO sharpened for user expectations.",
+      image: featureImage3, // <-- Add this line
     },
     {
       name: "Strategic Advisory",
       description:
         "Clarity in direction and insight in choice to chart your digital curve.",
+      image: featureImage4, // <-- Add this line
     },
   ];
+
+  // ... rest of the component
 
   return (
     <div className="overflow-hidden">
@@ -85,10 +95,11 @@ const HomePage: React.FC = () => {
                 className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80 border border-blue-900/50 hover:border-blue-700 transition-all duration-300"
               >
                 <img
-                  src={`https://picsum.photos/seed/feature${index + 1}/800/600`}
+                  src={feature.image}
                   alt={feature.name}
                   className="absolute inset-0 -z-10 h-full w-full object-cover"
                 />
+
                 <div className="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/60" />
                 <div className="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
 
