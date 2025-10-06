@@ -1,56 +1,61 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import AnimatedSpheres from "../components/AnimatedSpheres";
-// 1. Import your hero image
-import homeHeroImage from "../assets/home-hero1.png"; // <-- Make sure this path is correct
-import featureImage1 from "../assets/home1.png"; // Make sure this filename is correct
-import featureImage2 from "../assets/home2.png"; // Make sure this filename is correct
-import featureImage3 from "../assets/home3.png"; // Make sure this filename is correct
-import featureImage4 from "../assets/home4.png"; // Make sure this filename is correct
+import homeHeroImage from "../assets/home-hero1.png";
+import featureImage1 from "../assets/home1.png";
+import featureImage2 from "../assets/home2.png";
+import featureImage3 from "../assets/home3.png";
+import featureImage4 from "../assets/home4.png";
+import siteLogo from "../assets/logo.png"; // <-- Make sure path is correct
 
 const HomePage: React.FC = () => {
   const features = [
     {
       name: "Bespoke Digital Ecosystems",
       description: "Custom ERPs to intelligent workflow automations.",
-      image: featureImage1, // <-- Add this line
+      image: featureImage1,
     },
     {
       name: "Web & App Platforms",
       description:
         "Secure, high-performance applications for impeccable usability.",
-      image: featureImage2, // <-- Add this line
+      image: featureImage2,
     },
     {
       name: "Performance & Infrastructure",
       description: "Speed, security, and SEO sharpened for user expectations.",
-      image: featureImage3, // <-- Add this line
+      image: featureImage3,
     },
     {
       name: "Strategic Advisory",
       description:
         "Clarity in direction and insight in choice to chart your digital curve.",
-      image: featureImage4, // <-- Add this line
+      image: featureImage4,
     },
   ];
-
-  // ... rest of the component
 
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center text-center px-6 py-24">
-        {/* 2. Add the background image */}
         <img
           src={homeHeroImage}
           alt="Abstract digital art"
           className="absolute inset-0 w-full h-full object-cover z-0"
         />
-        {/* 3. (Optional) Add an overlay for text readability */}
         <div className="absolute inset-0 bg-black/50 z-0"></div>
-        <AnimatedSpheres />{" "}
-        {/* This will now appear on top of the image and overlay */}
-        <div className="relative z-10 max-w-4xl mx-auto">
+        <AnimatedSpheres />
+
+        <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
+          {" "}
+          {/* Added flex and items-center */}
+          {/* LOGO: Moved and styled for crisp display above text */}
+          <img
+            src={siteLogo}
+            alt="Thync logo"
+            // Adjusted classes: no opacity, auto margins for horizontal centering, margin-bottom for spacing
+            className="mb-8 w-32 md:w-48 lg:w-64 z-20" // <-- Adjusted styling here
+          />
           <div className="inline-block bg-blue-900/50 text-blue-300 rounded-full px-4 py-1 text-sm mb-6 border border-blue-700">
             Latest Integration: AI Agents for Workflow Automation
           </div>
