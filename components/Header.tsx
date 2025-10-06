@@ -10,9 +10,9 @@ const Header: React.FC = () => {
         {/* Brand: larger logo, no visible text */}
         <NavLink to="/" className="flex items-center" aria-label="Thync">
           <Logo
-            className="h-70 w-70 object-contain"
-            width={70}
-            height={70}
+            className="h-75 w-75 object-contain"
+            width={75}
+            height={75}
             alt="Thync"
           />
         </NavLink>
