@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import AnimatedSpheres from "../components/AnimatedSpheres";
-import homeHeroImage from "../assets/home-hero1.png";
-import featureImage1 from "../assets/home1.png";
-import featureImage2 from "../assets/home2.png";
-import featureImage3 from "../assets/home3.png";
-import featureImage4 from "../assets/home4.png";
+import homeHeroImage from "../assets/home-hero.webp";
+import featureImage1 from "../assets/home1.webp";
+import featureImage2 from "../assets/home2.webp";
+import featureImage3 from "../assets/home3.webp";
+import featureImage4 from "../assets/home4.webp";
 import siteLogo from "../assets/logo.png"; // <-- Make sure path is correct
 
 const HomePage: React.FC = () => {
@@ -41,7 +41,7 @@ const HomePage: React.FC = () => {
         <img
           src={homeHeroImage}
           alt="Abstract digital art"
-          className="absolute inset-0 w-full h-full object-cover z-0"
+          className="absolute inset-0 w-full h-full object-cover object-left md:object-center z-0"
         />
         <div className="absolute inset-0 bg-black/50 z-0"></div>
         <AnimatedSpheres />
@@ -86,18 +86,18 @@ const HomePage: React.FC = () => {
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
               What We Deliver
             </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-300">
+            <p className="mt-6 text-xl md:text-2xl leading-9 text-gray-300">
               From complex platforms to workflow automations, we engineer
               solutions that are precise, resilient, and built with purpose. We
               move your operations forward—streamlining, scaling, and
               differentiating.
             </p>
           </div>
-          <div className="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+          <div className="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-6 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-4">
             {features.map((feature, index) => (
               <article
                 key={feature.name}
-                className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80 border border-blue-900/50 hover:border-blue-700 transition-all duration-300"
+                className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-6 pb-6 pt-56 sm:pt-40 lg:pt-56 border border-blue-900/50 hover:border-blue-700 transition-all duration-300"
               >
                 <img
                   src={feature.image}
@@ -108,12 +108,14 @@ const HomePage: React.FC = () => {
                 <div className="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/60" />
                 <div className="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
 
-                <h3 className="mt-3 text-lg font-semibold leading-6 text-white">
-                  {feature.name}
-                </h3>
-                <p className="text-gray-300 mt-2 text-sm">
-                  {feature.description}
-                </p>
+                <div className="absolute inset-x-6 top-1/2 z-10">
+                  <h3 className="text-xl md:text-2xl font-semibold leading-7 text-white">
+                    {feature.name}
+                  </h3>
+                  <p className="text-gray-300 mt-2 text-base md:text-lg leading-7">
+                    {feature.description}
+                  </p>
+                </div>
               </article>
             ))}
           </div>
