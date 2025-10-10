@@ -1,4 +1,5 @@
 import React from 'react';
+import { posts } from '../data/posts';
 
 const BlogPage: React.FC = () => {
 
@@ -10,26 +11,7 @@ const BlogPage: React.FC = () => {
     'Digital Integrity'
   ];
 
-  const placeholderPosts = [
-    {
-      title: 'The Art of Durable Digital Frameworks',
-      category: 'Strategic Engineering',
-      excerpt: 'Mediocrity is a choice. We explore the principles behind building digital systems that last, adapting and growing stronger over time.',
-      imageUrl: 'https://picsum.photos/seed/blog1/800/600'
-    },
-    {
-      title: 'Beyond Speed: What A+ Core Web Vitals Really Mean for Business',
-      category: 'Performance & Optimization',
-      excerpt: 'An A+ score isn\'t just a vanity metric. It\'s about user trust, conversion, and discoverability. Here\'s how we achieve it.',
-      imageUrl: 'https://picsum.photos/seed/blog2/800/600'
-    },
-    {
-      title: 'From Chatbot to Colleague: Integrating AI Agents That Actually Work',
-      category: 'AI in Business',
-      excerpt: 'Moving beyond clunky chatbots to build purpose-driven AI agents that solve concrete business problems and unlock critical insights.',
-      imageUrl: 'https://picsum.photos/seed/blog3/800/600'
-    },
-  ]
+  // Posts are now sourced from ../data/posts
 
   return (
     <div>
@@ -52,7 +34,7 @@ const BlogPage: React.FC = () => {
             <div className="lg:w-3/4">
               <h2 className="text-2xl font-bold text-white mb-8">Latest Articles</h2>
               <div className="space-y-12">
-                {placeholderPosts.map((post) => (
+                {posts.map((post) => (
                    <article key={post.title} className="group relative flex flex-col items-start md:flex-row gap-8">
                       <div className="md:w-1/3">
                         <img src={post.imageUrl} alt="" className="aspect-[16/9] w-full rounded-2xl object-cover sm:aspect-[2/1] lg:aspect-[3/2] border-2 border-transparent group-hover:border-[#F88F26] transition" />
@@ -65,7 +47,7 @@ const BlogPage: React.FC = () => {
                         </div>
                         <div className="relative">
                           <h3 className="mt-3 text-lg font-semibold leading-6 text-white group-hover:text-[#F88F26]">
-                            <a href="#"><span className="absolute inset-0" />{post.title}</a>
+                            <a href={`/blog/${post.slug}`}><span className="absolute inset-0" />{post.title}</a>
                           </h3>
                           <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-400">{post.excerpt}</p>
                         </div>
