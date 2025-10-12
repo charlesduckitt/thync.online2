@@ -52,7 +52,7 @@ const AboutPage: React.FC = () => {
         <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
           <div className="lg:col-span-1 flex justify-center">
             <img
-              src="assets/charlesduckitt.webp"
+              src="/assets/charlesduckitt.webp"
               alt="Charles (Thync Founder)"
               className="rounded-full w-64 h-64 lg:w-80 lg:h-80 object-cover border-4 border-blue-800 shadow-2xl shadow-blue-600/20"
             />
@@ -98,7 +98,7 @@ const AboutPage: React.FC = () => {
 
           <div className="mt-16">
             <img
-              src="../assets/about1.webp"
+              src="/assets/about1.webp"
               alt="Our process workflow"
               className="rounded-2xl mx-auto shadow-2xl shadow-blue-600/20 border-2 border-blue-900/50"
             />
