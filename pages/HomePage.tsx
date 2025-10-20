@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import AnimatedSpheres from "../components/AnimatedSpheres";
-import homeHeroImage from "../assets/home-hero.webp";
-import featureImage1 from "../assets/home1.webp";
-import featureImage2 from "../assets/home2.webp";
-import featureImage3 from "../assets/home3.webp";
-import featureImage4 from "../assets/home4.webp";
-import siteLogo from "../assets/logo.png"; // <-- Make sure path is correct
+// Assets are in `public/assets/` — reference via absolute URLs
+const homeHeroImage = "/assets/home-hero.webp";
+const featureImage1 = "/assets/home1.webp";
+const featureImage2 = "/assets/home2.webp";
+const featureImage3 = "/assets/home3.webp";
+const featureImage4 = "/assets/home4.webp";
 
 const HomePage: React.FC = () => {
   const features = [
@@ -51,7 +51,7 @@ const HomePage: React.FC = () => {
           {/* Added flex and items-center */}
           {/* LOGO: Moved and styled for crisp display above text */}
           <img
-            src={siteLogo}
+            src="/assets/logo.png"
             alt="Thync logo"
             // Adjusted classes: no opacity, auto margins for horizontal centering, margin-bottom for spacing
             className="mb-8 w-32 md:w-48 lg:w-64 z-20" // <-- Adjusted styling here

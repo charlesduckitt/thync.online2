@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import Logo from "../assets/Logo";
+// Use public asset path for logo
 import { NAV_LINKS } from "../constants";
 
 const Header: React.FC = () => {
@@ -10,8 +10,9 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         {/* Brand: larger logo, no visible text */}
         <NavLink to="/" className="flex items-center" aria-label="Thync">
-          <Logo
-            className="h-75 w-75 object-contain"
+          <img
+            src="/assets/logo.png"
+            className="h-18 w-18 object-contain"
             width={75}
             height={75}
             alt="Thync"
@@ -48,11 +49,23 @@ const Header: React.FC = () => {
         >
           <span className="sr-only">Open main menu</span>
           {mobileOpen ? (
-            <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg
+              className="h-6 w-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
               <path strokeLinecap="round" d="M6 6l12 12M6 18L18 6" />
             </svg>
           ) : (
-            <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg
+              className="h-6 w-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
               <path strokeLinecap="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           )}
@@ -60,7 +73,9 @@ const Header: React.FC = () => {
       </div>
       <div
         id="mobile-menu"
-        className={`${mobileOpen ? "block" : "hidden"} md:hidden border-t border-blue-900/50 bg-[#04091A]/95 backdrop-blur-sm`}
+        className={`${
+          mobileOpen ? "block" : "hidden"
+        } md:hidden border-t border-blue-900/50 bg-[#04091A]/95 backdrop-blur-sm`}
       >
         <div className="container mx-auto px-6 py-4 space-y-4">
           {NAV_LINKS.map((link) => (
@@ -69,7 +84,9 @@ const Header: React.FC = () => {
               to={link.path}
               onClick={() => setMobileOpen(false)}
               className={({ isActive }) =>
-                `block text-gray-300 hover:text-white transition-colors duration-300 ${isActive ? "text-blue-400 font-semibold" : ""}`
+                `block text-gray-300 hover:text-white transition-colors duration-300 ${
+                  isActive ? "text-blue-400 font-semibold" : ""
+                }`
               }
             >
               {link.name}

@@ -2,10 +2,7 @@ import React from "react";
 import { CheckIcon } from "@heroicons/react/20/solid";
 
 // STEP 1: Import your images (adjust the path to your images)
-import serv1 from "../assets/serv1.webp";
-import serv2 from "../assets/serv2.webp";
-import serv3 from "../assets/serv3.webp";
-import serv4 from "../assets/serv4.webp";
+// Images live in `public/assets/`. Reference them by absolute URL paths (served from `/`) instead
 
 const services = [
   {
@@ -147,8 +144,13 @@ const tiers = [
 ];
 
 const ServicesPage: React.FC = () => {
-  // STEP 2: Create an array of the imported images
-  const serviceImages = [serv1, serv2, serv3, serv4];
+  // STEP 2: Create an array of image URLs pointing to `public/assets/`
+  const serviceImages = [
+    "/assets/serv1.webp",
+    "/assets/serv2.webp",
+    "/assets/serv3.webp",
+    "/assets/serv4.webp",
+  ];
 
   return (
     <div className="overflow-hidden">
